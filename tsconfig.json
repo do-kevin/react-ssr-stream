@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "target": "ES2016",
-    "module": "CommonJS",
+    "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "lib": ["ES2016"],
     "allowJs": true,
@@ -18,8 +18,9 @@
     "strictPropertyInitialization": true,
     "paths": {
       "src/*": ["./src/*"]
-    }
+    },
+    "jsx": "react-jsx"
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "src/server.ts"],
   "exclude": ["src/**/*.spec.ts"]
 }
