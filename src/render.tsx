@@ -1,9 +1,10 @@
 import { Response } from "express";
 import { renderToPipeableStream } from "react-dom/server";
 import { App } from "./client/src/App.js";
+import { OUTPUT_CSS } from "./shared/constants.js";
 
 let assets = {
-  "index.css": "/index.css",
+  [OUTPUT_CSS]: `/${OUTPUT_CSS}`,
 };
 
 export const render = (url: unknown, res: Response) => {

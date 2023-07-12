@@ -11,7 +11,7 @@ export function App(props: AppProps) {
 
   return (
     <Html title="system-panda Dashboard" assets={assets}>
-      <div className="app">
+      <div className="bg-slate-500 text-white px-3 py-2">
         <article>
           <p>Hello world</p>
           <p>Is this working?</p>
