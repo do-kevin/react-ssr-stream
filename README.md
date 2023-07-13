@@ -1,2 +1,3 @@
-# react-ssr-stream
-Learning how to run server-side React app on an express server
+# express-react-csr
+
+Learning to make Express client-side render React app instead since a project would need more interactivity.
