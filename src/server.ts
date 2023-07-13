@@ -1,6 +1,7 @@
 import chalk from "chalk";
 import cors from "cors";
-import express, { Router } from "express";
+import express from "express";
+import { render } from "./render.js";
 
 const PORT = process.env.PORT || 8000;
 
@@ -10,15 +11,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-const router = Router();
-
-router.get("/", (req, res) => {
-  return res.json({
-    message: "success",
-  });
+app.get("/", async function (req, res) {
+  render(req.url, res);
 });
 
-app.use(router);
+app.use(express.static("src/client/public"));
 
 const server = app.listen(PORT, () => {
   console.log(
