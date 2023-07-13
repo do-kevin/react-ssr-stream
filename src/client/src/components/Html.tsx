@@ -2,7 +2,7 @@ import { OUTPUT_CSS } from "../../../shared/constants.js";
 
 interface HtmlProps {
   title: string;
-  assets: {
+  assets?: {
     [key: string]: string;
   };
   children: string | JSX.Element | JSX.Element[];
@@ -16,7 +16,7 @@ export const Html = (props: HtmlProps) => {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="shortcut icon" href="favicon.ico" />
-        <link rel="stylesheet" href={assets[OUTPUT_CSS]} />
+        {assets && <link rel="stylesheet" href={assets[OUTPUT_CSS]} />}
         <title>{title}</title>
       </head>
       <body>

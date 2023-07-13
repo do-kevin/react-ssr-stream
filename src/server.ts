@@ -11,11 +11,29 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-app.get("/", async function (req, res) {
-  render(req.url, res);
+// app.get("/", async function (req, res) {
+//   render(req.url, res);
+// });
+
+app.get("/test", async function (req, res) {
+  res.json({
+    message: "success",
+    result: [
+      {
+        name: "First plugin",
+      },
+      {
+        name: "Second plugin",
+      },
+      {
+        name: "Third plugin",
+      },
+    ],
+  });
 });
 
-app.use(express.static("src/client/public"));
+// app.use(express.static("src/client/public"));
+app.use(express.static("src/client/dist"));
 
 const server = app.listen(PORT, () => {
   console.log(
